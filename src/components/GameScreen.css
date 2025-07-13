@@ -1,0 +1,308 @@
+.game-screen {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background: #1a1a2e;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header */
+.game-header {
+  background: #16213e;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e94560;
+}
+
+.game-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+}
+
+.dice-icon {
+  font-size: 20px;
+  color: #e94560;
+}
+
+.target-number {
+  background: #16213e;
+  color: #e94560;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Number Display */
+.number-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.number-circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: #0f3460;
+  border: 4px solid #e94560;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.current-number {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  line-height: 1;
+}
+
+.number-label {
+  font-size: 14px;
+  color: #cccccc;
+  margin-top: 5px;
+}
+
+/* Player Turn */
+.player-turn {
+  background: #16213e;
+  border: 2px solid #e94560;
+  border-radius: 10px;
+  margin: 15px 20px;
+  padding: 15px;
+  text-align: center;
+}
+
+.turn-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.turn-instruction {
+  font-size: 12px;
+  color: #cccccc;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cccccc;
+  transition: background-color 0.3s ease;
+}
+
+.progress-dot.active {
+  background: #e94560;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  margin-top: auto;
+  margin-bottom: 80px;
+}
+
+.increment-button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #e94560;
+  border: 3px solid white;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.increment-button:hover:not(.disabled) {
+  background: #d63384;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.increment-button.disabled {
+  background: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+.button-label {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.next-turn-button {
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background: #533483;
+  border: 2px solid white;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.next-turn-button:hover:not(.disabled) {
+  background: #6f42c1;
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.next-turn-button.disabled {
+  background: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+/* Game Info */
+.game-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #16213e;
+  opacity: 0.9;
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #e94560;
+}
+
+.turn-counter {
+  font-size: 12px;
+  color: #cccccc;
+  margin-bottom: 5px;
+}
+
+.game-rule {
+  font-size: 12px;
+  color: #cccccc;
+}
+
+/* Game Over Screen */
+.game-over {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+}
+
+.game-over h2 {
+  color: #e94560;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.game-over p {
+  color: white;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.restart-button {
+  margin-top: 30px;
+  padding: 12px 24px;
+  background: #e94560;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.restart-button:hover {
+  background: #d63384;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .game-screen {
+    height: 100vh;
+    max-width: 100%;
+  }
+
+  .number-circle {
+    width: 140px;
+    height: 140px;
+  }
+
+  .current-number {
+    font-size: 40px;
+  }
+
+  .increment-button {
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+  }
+
+  .next-turn-button {
+    width: 180px;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .game-over h2 {
+    font-size: 20px;
+  }
+
+  .game-over p {
+    font-size: 14px;
+  }
+
+  .restart-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .action-buttons {
+    margin-bottom: 70px;
+  }
+}
