@@ -1,3 +1,4 @@
+# Trigger Actions after repo rename
 name: Deploy to GitHub Pages
 
 on:
